@@ -4,7 +4,7 @@
 
 Submitted by: **Vo Tan Tho**
 
-Time spent: **X** hours spent in total
+Time spent: **6** hours spent in total
 
 URL: **Insert your Heroku URL here**
 

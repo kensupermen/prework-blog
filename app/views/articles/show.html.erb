@@ -10,6 +10,19 @@
   <%= @article.body %>
 </p>
 
+<h2>Comments</h2>
+<% @article.comments.each do |comment| %>
+
+<!--   <p>
+    <strong>Commenter:</strong>
+    <%= comment.article_id %>
+  </p> -->
+ 
+  <p>
+  	<%= comment.name %>:
+    <%= comment.body %>
+  </p>
+<% end %>
 
 
 <%= link_to 'Edit', edit_article_path(@article) %> |
