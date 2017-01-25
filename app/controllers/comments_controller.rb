@@ -23,29 +23,12 @@ class CommentsController < ApplicationController
 
   # POST /comments
   # POST /comments.json
-  # def create
-  #   @comment = Comment.new(comment_params)
-
-  #   respond_to do |format|
-  #     if @comment.save
-  #       format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
-  #       format.json { render :show, status: :created, location: @comment }
-  #     else
-  #       format.html { render :new }
-  #       format.json { render json: @comment.errors, status: :unprocessable_entity }
-  #     end
-  #   end
-  # end
-
   def create
     @article = Article.find(params[:article_id])
-    # @article = Article.find(1)
-    @name = params[:name]
+    # @comment = Comment.new(comment_params)
     @comment = @article.comments.create(comment_params)
     redirect_to article_path(@article)
   end
- 
-
 
   # PATCH/PUT /comments/1
   # PATCH/PUT /comments/1.json
@@ -79,6 +62,6 @@ class CommentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def comment_params
-      params.require(:comment).permit(:article_id, :name,  :body)
+      params.require(:comment).permit(:commenter, :body)
     end
 end

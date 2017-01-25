@@ -17,11 +17,13 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
+    @article = Article.find(params[:id])
   end
 
   # GET /articles/new
   def new
     @article = Article.new
+    @comment = Comment.new(article_id:  params[:article_id])
   end
 
   # GET /articles/1/edit
