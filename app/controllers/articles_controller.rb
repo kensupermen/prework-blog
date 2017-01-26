@@ -36,7 +36,12 @@ class ArticlesController < ApplicationController
   # POST /articles.json
   def create
     @article = Article.new(article_params)
-    @tag = Tag.new(:tag_list)
+    # @article.save
+
+    # @tag = @article.tags.create(params[:tag_list])
+    @tag = Tag.new(params[:tag_list])
+
+    # @tag = Tag.new(:tag_list)
     
     # respond_to do |format|
     #   if @article.save
