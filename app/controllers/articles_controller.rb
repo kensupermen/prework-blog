@@ -17,14 +17,17 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
+    
     @article = Article.find(params[:id])
+    @tags = @article.taggings.collect{|tagging| tagging.tag}
+
   end
 
   # GET /articles/new
   def new
     @article = Article.new
     @comment = Comment.new(article_id:  params[:article_id])
-    # @tags = @article.taggings.collect{|tagging| tagging.tag}
+    
 
   end
 
@@ -36,22 +39,17 @@ class ArticlesController < ApplicationController
   # POST /articles.json
   def create
     @article = Article.new(article_params)
-    # @article.save
 
-    # @tag = @article.tags.create(params[:tag_list])
-    @tag = Tag.new(params[:tag_list])
+    respond_to do |format|
+      if @article.save
+        format.html { redirect_to @article, notice: 'Article was successfully created.' }
+        format.json { render :show, status: :created, location: @article }
+      else
+        format.html { render :new }
+        format.json { render json: @article.errors, status: :unprocessable_entity }
+      end
+    end
 
-    # @tag = Tag.new(:tag_list)
-    
-    # respond_to do |format|
-    #   if @article.save
-    #     format.html { redirect_to @article, notice: 'Article was successfully created.' }
-    #     format.json { render :show, status: :created, location: @article }
-    #   else
-    #     format.html { render :new }
-    #     format.json { render json: @article.errors, status: :unprocessable_entity }
-    #   end
-    # end
   end
 
   # PATCH/PUT /articles/1
