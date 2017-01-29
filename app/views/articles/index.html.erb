@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tho's Blog</h1>
+<h3>My first Rails application for the CoderSchool!</h3>
+
+<div class="row">
+  <div class="col-sm-8">
+    
+    <%= render @articles %>
+
+  </div>
+  <div class="col-sm-4">
+  	The are <%= @articles.count %>	post
+  </div>
+</div>
+
+<br>
+
+<%= link_to 'New Article', new_article_path %>
