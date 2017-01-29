@@ -6,7 +6,7 @@ Submitted by: **Vo Tan Tho**
 
 Time spent: **10** hours spent in total
 
-URL: **Insert your Heroku URL here**
+URL: **https://blogprework.herokuapp.com/**
 
 ## User Stories
 
