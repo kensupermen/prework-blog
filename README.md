@@ -39,7 +39,9 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-![Video Walkthrough](walkthrough.gif)
+![Video Walkthrough](walkthrough_1.gif)
+![Video Walkthrough](walkthrough_2.gif)
+![Video Walkthrough](walkthrough_3.gif)
 
 ## Notes
 
@@ -47,7 +49,7 @@ Describe any challenges encountered while building the app.
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright 2017 Vo Tan Tho
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
