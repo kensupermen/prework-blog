@@ -16,7 +16,7 @@
 
 
 <h2>Add a comment:</h2>
-<%= form_for([@article, @article.comments.build]) do |f| %>
+<%= bootstrap_form_for([@article, @article.comments.build]) do |f| %>
 <p>
   <%= f.label :commenter %><br>
   <%= f.text_field :commenter %>
@@ -44,7 +44,6 @@
         </div><!-- /panel-body -->
         </div><!-- /panel panel-default -->
         </div><!-- /col-sm-5 -->
-        
         
       </p>
       <% end %>

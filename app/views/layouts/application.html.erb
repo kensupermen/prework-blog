@@ -27,21 +27,24 @@
           
           <ul class="nav navbar-nav navbar-right">
             <form class="navbar-form navbar-left">
-            <%= form_tag(articles_path, :method => "get", id: "search-form")  do %>
-            <div class="form-group">
-              
-              <%= text_field_tag :search, params[:search], placeholder: "Search Article", class: "form-control" %>
-              
-              <!-- <input type="text" class="form-control" placeholder="Search"> -->
-            </div>
-            <%= submit_tag "Search", class: "btn btn-default"%>
-            <% end %>
-          </form>
+              <%= form_tag(articles_path, :method => "get", id: "search-form")  do %>
+              <div class="form-group">
+                
+                <%= text_field_tag :search, params[:search], placeholder: "Search Article", class: "form-control" %>
+                
+                <!-- <input type="text" class="form-control" placeholder="Search"> -->
+              </div>
+              <%= submit_tag "Search", class: "btn btn-default"%>
+              <% end %>
+            </form>
           </ul>
           </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
         </nav>
         <div class="container">
+          
+          <%= flash_messages %>
+          
           <%= yield %>
         </div>
       </body>

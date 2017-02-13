@@ -2,6 +2,9 @@ class Article < ApplicationRecord
   has_many :comments, :dependent => :delete_all
   has_many :taggings, :dependent => :delete_all
   has_many :tags, through: :taggings, :dependent => :delete_all
+
+  validates :title, :body, presence: true
+  
   def self.search(search)
     where("title LIKE ?", "%#{search}%")
   end
